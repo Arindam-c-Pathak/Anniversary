@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+.fog-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  /* Adjust colors to match your bg-rose-50 (#fff1f2) */
+  background: linear-gradient(
+    to bottom,
+    #fff1f2 0%,
+    transparent 15%,
+    transparent 85%,
+    #fff1f2 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 25%, transparent 75%, black);
+}
+.page-border {
+  pointer-events: none; /* So you can still click the app */
+  position: fixed;
+  inset: 0;
+  border: 16px solid #ff0026; /* rose-400 */
+  z-index: 150; /* Above the fog and content */
+  margin: 1px; /* Gap between the edge of the screen and the border */
+  border-radius: 55px;
+}
+
+/* Hide border on very small screens if it gets in the way */
+@media (max-width: 640px) {
+  .page-border {
+    border-width: 8px;
+  }
+}
