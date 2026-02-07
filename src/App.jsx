@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 export default function App() {
   const [isStarted, setIsStarted] = useState(false);
   const audioRef = useRef(null);
-  const datingStartDate = "2025-02-14T02:32:00+05:30"; // IST Offset
+  const datingStartDate = "2025-02-07T02:32:00+05:30"; // IST Offset
 
   const handleStart = () => {
     setIsStarted(true);
